@@ -93,7 +93,6 @@ const EditSidebar = ({
       <ul className="links">
         <li><a href="/doc/Introduction_to_Voting">{l('Voting FAQ')}</a></li>
         <li><a href="/doc/Editing_FAQ">{l('Editing FAQ')}</a></li>
-        <li><a href="/doc/Edit_Types">{l('Edit Types')}</a></li>
       </ul>
     </div>
   );
