@@ -30,6 +30,8 @@ import {
 import relationshipDateText
   from '../../common/utility/relationshipDateText.js';
 import Tooltip from '../../edit/components/Tooltip.js';
+import getRelationshipLinkType
+  from '../../edit/utility/getRelationshipLinkType.js';
 import {
   getPhraseAndExtraAttributesText,
 } from '../../edit/utility/linkPhrase.js';
@@ -48,7 +50,6 @@ import type {
 import getLinkPhrase from '../utility/getLinkPhrase.js';
 import getOpenEditsLink from '../utility/getOpenEditsLink.js';
 import getRelationshipKey from '../utility/getRelationshipKey.js';
-import getRelationshipLinkType from '../utility/getRelationshipLinkType.js';
 import getRelationshipStatusName
   from '../utility/getRelationshipStatusName.js';
 import isRelationshipBackward from '../utility/isRelationshipBackward.js';
