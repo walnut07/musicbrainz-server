@@ -18,6 +18,7 @@ import EditLink from '../../static/scripts/common/components/EditLink.js';
 import EditorLink from '../../static/scripts/common/components/EditorLink.js';
 import linkedEntities from '../../static/scripts/common/linkedEntities.mjs';
 import bracketed from '../../static/scripts/common/utility/bracketed.js';
+import HelpIcon from '../../static/scripts/edit/components/HelpIcon.js';
 import getVoteName from '../../static/scripts/edit/utility/getVoteName.js';
 import {
   editorMayApprove,
@@ -71,6 +72,23 @@ const EditHeader = ({
     (vote) => vote.vote === EDIT_VOTE_APPROVE,
   );
   const showVoteTally = latestVoteForEditor || isEditEditor || !edit.is_open;
+
+  const docLink = `/doc/Edit_Types/${edit.edit_type}`;
+  const docTooltip = (
+    <div className="edit-help">
+      <HelpIcon
+        content={exp.l(
+          `See the {doc_link|documentation for this edit type}.`,
+          {
+            doc_link: {
+              href: docLink,
+              target: '_blank',
+            },
+          },
+        )}
+      />
+    </div>
+  );
 
   const subHeading = user ? (
     <>
@@ -161,6 +179,7 @@ const EditHeader = ({
               </tr>
             </table>
           </div>
+          {docTooltip}
           <h2>
             <EditLink content={editTitle} edit={edit} />
           </h2>
@@ -187,6 +206,7 @@ const EditHeader = ({
               ) : null}
             </div>
           ) : null}
+          {docTooltip}
           <h1>{editTitle}</h1>
         </>
       )}
